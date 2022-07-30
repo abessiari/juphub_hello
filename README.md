@@ -15,8 +15,14 @@ git clone https://github.com/abessiari/dockerspawner.git -b dockstore
 cd dockerspawner/
 pip3 install -e .
 
-jupyterhub --generate-config -f jupyterhub_config.py
-# configure oauth, spawner 
+# Generate config file or use the sample jupyterhub_config.py from this repo
+# jupyterhub --generate-config -f jupyterhub_config.py 
+# You need to configure the hub io and the github clientid, secret, callback
+c.JupyterHub.hub_ip = 'XXX.XXX.XXX.XXX'
+c.GitHubOAuthenticator.oauth_callback_url = 'http://localhost:8000/hub/oauth_callback'
+c.GitHubOAuthenticator.client_id = 'XXX'
+c.GitHubOAuthenticator.client_secret = 'XXX'
+
 sudo ~/miniconda3/envs/dockstore-jupyterhub/bin/jupyterhub -f jupyterhub_config.py
 ```
 
