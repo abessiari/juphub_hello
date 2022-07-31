@@ -49,9 +49,9 @@ docker build -t juphub-hello:main .
 
 Using browser acces at http://localhost:8000/user/abessiari/lab/tree/hello.ipynb?image=juphub-hello:main
 
-# Debugging
+# Trouble
 
-If any problems you may want cleanup and then restart jupyterhub 
+If any trouble you may want cleanup and then restart jupyterhub 
 
 ```sh 
 rm -rf jupyterhub.sqlite jupyterhub_cookie_secret 
