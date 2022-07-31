@@ -43,6 +43,7 @@ git clone https://github.com/abessiari/juphub_hello.git
 
 cd juphub_hello
 docker build -t juphub-hello:main .
+docker image list # make sure you see your image
 ```
 
 ## Access Notebook
