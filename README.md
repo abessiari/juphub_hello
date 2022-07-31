@@ -48,3 +48,13 @@ docker build -t juphub-hello:main .
 ## Access Notebook
 
 Using browser acces at http://localhost:8000/user/abessiari/lab/tree/hello.ipynb?image=juphub-hello:main
+
+# Debugging
+
+If any problems you may want cleanup and then restart jupyterhub 
+
+```sh 
+rm -rf jupyterhub.sqlite jupyterhub_cookie_secret 
+docker ps -a
+docker rm -f jupyter-your-user-name
+```
