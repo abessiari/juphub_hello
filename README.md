@@ -19,7 +19,7 @@ pip3 install -e .
 
 # Generate config file or use the sample jupyterhub_config.py from this repo
 # jupyterhub --generate-config -f jupyterhub_config.py 
-# You need to configure the hub io. It needs to be public 
+# You need to configure the hub ip. It needs to be public 
 c.JupyterHub.hub_ip = 'XXX.XXX.XXX.XXX'
 
 # GUTHUB OAUTH
@@ -34,6 +34,9 @@ sudo ~/miniconda3/envs/dockstore-jupyterhub/bin/jupyterhub -f jupyterhub_config.
 ```
 
 ## Build image
+
+This is the image that will be passed in the uri. Dockerhub will try to pull it. 
+So it needs to be built or pushed to dockerhub. 
 
 ```sh
 git clone https://github.com/abessiari/juphub_hello.git
