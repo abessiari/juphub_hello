@@ -11,17 +11,24 @@ pip3 install jupyterhub==2.3.1
 pip3 install oauthenticator==15.0.1
 pip3 install jupyter-client==7.3.4
 pip3 install jupyterlab==3.4.3
+
+# This docker spawner allows for image to be specifed in in the url
 git clone https://github.com/abessiari/dockerspawner.git -b dockstore
 cd dockerspawner/
 pip3 install -e .
 
 # Generate config file or use the sample jupyterhub_config.py from this repo
 # jupyterhub --generate-config -f jupyterhub_config.py 
-# You need to configure the hub io and the github clientid, secret, callback
+# You need to configure the hub io. It needs to be public 
 c.JupyterHub.hub_ip = 'XXX.XXX.XXX.XXX'
+
+# GUTHUB OAUTH
 c.GitHubOAuthenticator.oauth_callback_url = 'http://localhost:8000/hub/oauth_callback'
 c.GitHubOAuthenticator.client_id = 'XXX'
 c.GitHubOAuthenticator.client_secret = 'XXX'
+
+# Default image. 
+c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0'
 
 sudo ~/miniconda3/envs/dockstore-jupyterhub/bin/jupyterhub -f jupyterhub_config.py
 ```

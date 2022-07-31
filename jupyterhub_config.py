@@ -771,10 +771,8 @@ c.JupyterHub.hub_port = 80
 # c.JupyterHub.spawner_class = 'jupyterhub.spawner.LocalProcessSpawner'
 from dockerspawner import DockerSpawner
 c.JupyterHub.spawner_class = DockerSpawner 
-# c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0'
-# c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0_hello'
-# c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0_hello2'
-c.DockerSpawner.image = 'juphub-hello:main'
+
+c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0'
 
 ## Path to SSL certificate file for the public facing interface of the proxy
 #  
