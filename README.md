@@ -1,5 +1,7 @@
 # juphub_hello
 
+### These instructions were tested on a Linux machine. They will not work on Mac ... 
+
 ## Install Jupyter Using Miniconda
 
 ```sh
