@@ -1,6 +1,6 @@
 # juphub_hello
 
-### These instructions were tested on a Linux machine. They will not work on Mac ... 
+### These instructions were tested on a Linux machine. It is preferred. These instructions did not work on my Mac ... 
 
 ## Install Jupyter Using Miniconda
 
@@ -24,7 +24,7 @@ pip3 install -e .
 # You need to configure the hub ip. It needs to be public 
 c.JupyterHub.hub_ip = 'XXX.XXX.XXX.XXX'
 
-# GUTHUB OAUTH For this callback to workk: use 'ssh -L 8000:131.243.2.50:8000 username@HUB_PUBLIC_IP'
+# GUTHUB OAUTH For this callback to work: use 'ssh -L 8000:131.243.2.50:8000 username@HUB_PUBLIC_IP'
 c.GitHubOAuthenticator.oauth_callback_url = 'http://localhost:8000/hub/oauth_callback'
 c.GitHubOAuthenticator.client_id = 'XXX'
 c.GitHubOAuthenticator.client_secret = 'XXX'
