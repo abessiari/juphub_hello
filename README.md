@@ -64,3 +64,5 @@ rm -rf jupyterhub.sqlite jupyterhub_cookie_secret
 docker ps -a
 docker rm -f jupyter-your-user-name
 ```
+## Dockstore
+see jupyterhub branch at https://github.com/abessiari/dockstore/tree/jupyterhub and https://github.com/abessiari/dockstore-ui2/tree/jupyterhub
