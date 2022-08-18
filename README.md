@@ -51,7 +51,9 @@ docker image list # make sure you see your image
 
 ## Access Notebook
 
-Using browser acces at http://localhost:8000/user/abessiari/lab/tree/hello.ipynb?image=juphub-hello:main
+Modify SOME_USER with your username
+
+Using browser acces at http://localhost:8000/user/SOME_USER/lab/tree/hello.ipynb?image=juphub-hello:main
 
 # Trouble
 
