@@ -39,7 +39,7 @@ sudo ~/miniconda3/envs/dockstore-jupyterhub/bin/jupyterhub -f jupyterhub_config.
 ## Build image
 
 This is the image that will be passed in the uri. Dockerhub will try to pull it. 
-So it needs to be built or pushed to dockerhub. 
+So it needs to be built locally where the hub resides. No need to push it to dockerhub. 
 
 ```sh
 git clone https://github.com/abessiari/juphub_hello.git
