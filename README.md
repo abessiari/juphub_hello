@@ -6,6 +6,7 @@
 
 ```sh
 conda create --name dockstore-jupyterhub python=3.10
+conda activate dockstore-jupyterhub
 conda install -c conda-forge nodejs
 conda upgrade -c conda-forge nodejs
 npm install -g configurable-http-proxy
@@ -13,27 +14,19 @@ pip3 install jupyterhub==2.3.1
 pip3 install oauthenticator==15.0.1
 pip3 install jupyter-client==7.3.4
 pip3 install jupyterlab==3.4.3
+pip3 install 'sqlalchemy<1.4'
+pip3 install --upgrade docker
+
 
 # This docker spawner allows for image to be specifed in in the url
 git clone https://github.com/abessiari/dockerspawner.git -b dockstore
 cd dockerspawner/
 pip3 install -e .
 
-# Generate config file or use the sample jupyterhub_config.py from this repo
-# jupyterhub --generate-config -f jupyterhub_config.py 
-# You need to configure the hub ip. It needs to be public 
-c.JupyterHub.hub_ip = 'XXX.XXX.XXX.XXX'
+# use the sample jupyterhub_config.py from this repo
+git clone https://github.com/abessiari/juphub_hello
 
-# GUTHUB OAUTH For this callback to work: use 'ssh -L 8000:HUB_PUBLIC_IP:8000 username@HUB_PUBLIC_IP'
-c.GitHubOAuthenticator.oauth_callback_url = 'http://localhost:8000/hub/oauth_callback'
-c.GitHubOAuthenticator.client_id = 'XXX'
-c.GitHubOAuthenticator.client_secret = 'XXX'
-
-
-# Default image. 
-c.DockerSpawner.image = 'jupyterhub/singleuser:2.3.0'
-
-sudo ~/miniconda3/envs/dockstore-jupyterhub/bin/jupyterhub -f jupyterhub_config.py
+jupyterhub -f juphub_hello/jupyterhub_config.py
 ```
 
 ## Build image
