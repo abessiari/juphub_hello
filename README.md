@@ -14,6 +14,9 @@ pip3 install jupyterhub==2.3.1
 pip3 install oauthenticator==15.0.1
 pip3 install jupyter-client==7.3.4
 pip3 install jupyterlab==3.4.3
+pip3 install 'sqlalchemy<1.4'
+pip3 install --upgrade docker
+
 
 # This docker spawner allows for image to be specifed in in the url
 git clone https://github.com/abessiari/dockerspawner.git -b dockstore
@@ -23,7 +26,7 @@ pip3 install -e .
 # use the sample jupyterhub_config.py from this repo
 git clone https://github.com/abessiari/juphub_hello
 
-sudo jupyterhub -f juphub_hello/jupyterhub_config.py
+jupyterhub -f juphub_hello/jupyterhub_config.py
 ```
 
 ## Build image
